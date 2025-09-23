@@ -1,5 +1,7 @@
 ''' login page class'''
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class LoginPage:
@@ -8,6 +10,9 @@ class LoginPage:
     to the variables
     '''
     textbox_username_id = "//input[@id='Email']"
+    # WebDriverWait(self.driver, 10).until(
+    #     EC.presence_of_element_located((By.ID, "Email"))  # replace with your locator
+    # )
     textbox_password_id = "//input[@id='Password']"
     login_button = "//button[@type='submit']"
     logout_link_txt = "Logout"
@@ -15,14 +20,15 @@ class LoginPage:
     def __init__(self, driver):
         self.driver = driver
 
-    def setusername(self, username):
+    def set_username(self, username):
         ''' setting username to enter'''
         self.driver.find_element(By.XPATH,
                                  self.textbox_username_id).clear()
-        self.driver.find_element(By.XPATH,
-                                 self.textbox_username_id).send_keys(username)
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.textbox_username_id))  # replace with your locator
+        ).send_keys(username)
 
-    def setpassword(self, password):
+    def set_password(self, password):
         '''setting password to enter in password field'''
         self.driver.find_element(By.XPATH,
                                  self.textbox_password_id).clear()

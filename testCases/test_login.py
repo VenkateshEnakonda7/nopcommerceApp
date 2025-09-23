@@ -43,8 +43,8 @@ class TestLogin:
         self.driver = setup
         self.driver.get(self.baseUrl)
         self.login_pg = LoginPage(self.driver)
-        self.login_pg.setusername(self.username)
-        self.login_pg.setpassword(self.password)
+        self.login_pg.set_username(self.username)
+        self.login_pg.set_password(self.password)
         self.login_pg.click_login_button()
         actual_title = self.driver.title
 
