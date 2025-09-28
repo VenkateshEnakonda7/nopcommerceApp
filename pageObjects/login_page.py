@@ -10,9 +10,6 @@ class LoginPage:
     to the variables
     '''
     textbox_username_id = "//input[@id='Email']"
-    # WebDriverWait(self.driver, 10).until(
-    #     EC.presence_of_element_located((By.ID, "Email"))  # replace with your locator
-    # )
     textbox_password_id = "//input[@id='Password']"
     login_button = "//button[@type='submit']"
     logout_link_txt = "Logout"
