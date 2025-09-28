@@ -8,7 +8,7 @@ class TestCustomer:
     baseUrl = ReadConfig.get_application_url()
     username = ReadConfig.get_username()
     password = ReadConfig.get_password()
-    logger = LogGen.loggen()
+    logger = LogGen.loggen(__name__)
     email = "arthur_holmes@nopCommerce.com"
 
     def test_search_customer_by_email(self,setup):

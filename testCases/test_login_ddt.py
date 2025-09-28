@@ -11,7 +11,7 @@ class TestLoginDDT:
     '''
     baseUrl = ReadConfig.get_application_url()
     path = ".//TestData/logindata.xlsx"
-    logger = LogGen.loggen()
+    logger = LogGen.loggen(__name__)
 
     ''' testing home page title'''
     def test_title_homepage(self, setup):

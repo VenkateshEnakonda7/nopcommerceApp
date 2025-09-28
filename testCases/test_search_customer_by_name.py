@@ -8,7 +8,7 @@ class TestCustomer:
     baseUrl = ReadConfig.get_application_url()
     username = ReadConfig.get_username()
     password = ReadConfig.get_password()
-    logger = LogGen.loggen()
+    logger = LogGen.loggen(__name__)
     first_name = "Brenda"
     name = "Brenda Lindgren"
 

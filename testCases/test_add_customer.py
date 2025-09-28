@@ -12,7 +12,7 @@ class TestAddCustomer:
     baseUrl = ReadConfig.get_application_url()
     username = ReadConfig.get_username()
     password = ReadConfig.get_password()
-    logger = LogGen.loggen()
+    logger = LogGen.loggen(__name__)
 
     def test_add_customers(self, setup):
         self.logger.info("TestCase_003_AddCustomer")
